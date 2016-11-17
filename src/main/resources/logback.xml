@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<configuration>
+
+	<property name="LOG_DIR" value="logs" /> <!-- to write to application path after logs dir creation -->
+
+	<appender name="FILE-THREAD" class="ch.qos.logback.classic.sift.SiftingAppender">
+
+      <discriminator>
+		<key>logFileName</key>
+		<defaultValue>spring-mail-sender-trace</defaultValue> <!-- log file name -->
+	  </discriminator>
+
+	  <sift>
+		<appender name="FILE-${logFileName}"
+			class="ch.qos.logback.core.rolling.RollingFileAppender">
+			<file>${LOG_DIR}/${logFileName}.log</file>
+
+			<encoder class="ch.qos.logback.classic.encoder.PatternLayoutEncoder">
+				<Pattern>
+					%date{"yyyy-MM-dd HH:mm:ss,SSS"} [%thread] %level %logger{100} - %msg%n
+				</Pattern>
+			</encoder>
+
+			<rollingPolicy
+				class="ch.qos.logback.core.rolling.FixedWindowRollingPolicy">
+				<FileNamePattern>${LOG_DIR}/archive/${logFileName}.%i.log.zip
+				</FileNamePattern>
+				<MinIndex>1</MinIndex>
+				<MaxIndex>10</MaxIndex>
+			</rollingPolicy>
+
+			<triggeringPolicy
+				class="ch.qos.logback.core.rolling.SizeBasedTriggeringPolicy">
+				<MaxFileSize>10MB</MaxFileSize>
+			</triggeringPolicy>
+
+		</appender>
+
+	  </sift>
+	</appender>
+
+    <appender name="STDOUT" class="ch.qos.logback.core.ConsoleAppender">
+        <layout class="ch.qos.logback.classic.PatternLayout">
+            <Pattern>
+                %d{"yyyy-MM-dd HH:mm:ss,SSS"} [%thread] %level %logger{100} - %msg%n
+            </Pattern>
+        </layout>
+    </appender>
+
+	<logger name="com.decoder.dqs" level="debug"
+		additivity="false">
+		<appender-ref ref="FILE-THREAD" />
+		<appender-ref ref="STDOUT"/>
+	</logger>
+
+	<logger name="org.springframework" level="debug" additivity="false">
+		<appender-ref ref="FILE-THREAD" />
+		<appender-ref ref="STDOUT"/>
+	</logger>
+
+	<root level="error">
+		<appender-ref ref="FILE-THREAD" />
+	</root>
+
+</configuration>

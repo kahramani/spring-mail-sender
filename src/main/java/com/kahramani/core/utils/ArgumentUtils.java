@@ -16,8 +16,8 @@ public class ArgumentUtils {
     private static final Logger logger = LoggerFactory.getLogger(ArgumentUtils.class);
 
     /**
-     * to check empty and null status of the given
-     * @param t wanted to check empty or null
+     * to check empty/null status of the given
+     * @param t wanted to check empty/null
      * @param <T> any child class of CharSequence
      * @return a boolean which refers that the given value is empty/null or not
      */
@@ -26,8 +26,8 @@ public class ArgumentUtils {
     }
 
     /**
-     * to check empty and null status of the given
-     * @param t wanted to check empty or null
+     * to check empty/null status of the given
+     * @param t wanted to check empty/null
      * @param <T> any child class of Collection
      * @return a boolean which refers that the given value is empty/null or not
      */
@@ -36,8 +36,8 @@ public class ArgumentUtils {
     }
 
     /**
-     * to check empty and null status of the given
-     * @param t wanted to check empty or null
+     * to check empty/null status of the given
+     * @param t wanted to check empty/null
      * @param <T> any child class of Map
      * @return a boolean which refers that the given value is empty/null or not
      */
@@ -46,7 +46,7 @@ public class ArgumentUtils {
     }
 
     /**
-     * to check empty and null status of the given Object
+     * to check null status of the given Object
      * @param o wanted to check null
      * @return a boolean which refers that the given value is null or not
      */

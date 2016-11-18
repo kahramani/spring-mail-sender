@@ -110,23 +110,23 @@ public class Chronometer {
         } else if (MINUTE > duration) {
             int sec = (int) Math.floor((double) (duration / SECONDS));
             int ms = (int) duration - SECONDS*sec;
-            timeStr.append(sec).append(" ").append(abbrSeconds).append(" ").
-                    append(ms).append(" ").append(abbrMillisecond);
+            timeStr.append(sec).append(" ").append(abbrSeconds).append(" ")
+                    .append(ms).append(" ").append(abbrMillisecond);
         } else if (HOUR > duration) {
             int min = (int) Math.floor((double) (duration / MINUTE));
             int remainder = (int) duration - MINUTE*min;
             int sec = (int) Math.floor((double) (remainder / SECONDS));
-            timeStr.append(min).append(" ").append(abbrMinute).append(" ").
-                    append(sec).append(" ").append(abbrSeconds);
+            timeStr.append(min).append(" ").append(abbrMinute).append(" ")
+                    .append(sec).append(" ").append(abbrSeconds);
         } else if (DAY > duration) {
             int hour = (int) Math.floor((double) (duration / HOUR));
             int remainder = (int) duration - HOUR*hour;
             int min = (int) Math.floor((double) (remainder / MINUTE));
             remainder -= MINUTE*min;
             int sec= (int) Math.floor((double) (remainder / SECONDS));
-            timeStr.append(hour).append(" ").append(abbrHour).append(" ").
-                    append(min).append(" ").append(abbrMinute).append(" ").
-                    append(sec).append(" ").append(abbrSeconds);
+            timeStr.append(hour).append(" ").append(abbrHour).append(" ")
+                    .append(min).append(" ").append(abbrMinute).append(" ")
+                    .append(sec).append(" ").append(abbrSeconds);
         } else if (DAY > duration) {
             int day = (int) Math.floor((double) (duration / DAY));
             int remainder = (int) duration - DAY*day;
@@ -135,10 +135,10 @@ public class Chronometer {
             int min = (int) Math.floor((double) (remainder / MINUTE));
             remainder -= MINUTE*min;
             int sec= (int) Math.floor((double) (remainder / SECONDS));
-            timeStr.append(day).append(" ").append(abbrDay).append(" ").
-                    append(hour).append(" ").append(abbrHour).append(" ").
-                    append(min).append(" ").append(abbrMinute).append(" ").
-                    append(sec).append(" ").append(abbrSeconds);
+            timeStr.append(day).append(" ").append(abbrDay).append(" ")
+                    .append(hour).append(" ").append(abbrHour).append(" ")
+                    .append(min).append(" ").append(abbrMinute).append(" ")
+                    .append(sec).append(" ").append(abbrSeconds);
         } else {
             timeStr.append(0).append(" ").append(abbrMillisecond);
         }

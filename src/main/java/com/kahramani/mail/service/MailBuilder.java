@@ -76,7 +76,7 @@ public class MailBuilder {
     /**
      * to add an attachment to the mail
      * @param filePath path of the file wanted to attach to the mail
-     * @param attachmentName will be shown as attached file name in the mail - OPTIONAL
+     * @param attachmentName will be shown as attached file name in the mail. It is an optional parameter
      * @return a boolean which refers adding file as an attachment is a success or not
      */
     public boolean addAttachment(String filePath, String attachmentName) {

@@ -47,7 +47,7 @@
         </layout>
     </appender>
 
-	<logger name="com.decoder.dqs" level="debug"
+	<logger name="com.kahramani.mail" level="debug"
 		additivity="false">
 		<appender-ref ref="FILE-THREAD" />
 		<appender-ref ref="STDOUT"/>
